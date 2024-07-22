@@ -6,15 +6,26 @@ void main() {
   runApp(HappyAnniversaryApp());
 }
 
-class HappyAnniversaryApp extends StatelessWidget {
+class HappyAnniversaryApp extends StatefulWidget {
+  @override
+  State<HappyAnniversaryApp> createState() => _HappyAnniversaryAppState();
+}
+
+class _HappyAnniversaryAppState extends State<HappyAnniversaryApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Happy Anniversary',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
+    return SafeArea(
+      child: MaterialApp(
+        title: 'Happy Anniversary',
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+        ),
+        home: HomePage(),
+        routes: <String,WidgetBuilder>{
+          "/home":(context)=>HappyAnniversaryApp(),
+          "/Slider":(context)=>Sliderpage(),
+        },
       ),
-      home: HomePage(),
     );
   }
 }
