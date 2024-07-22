@@ -1,5 +1,6 @@
 // ignore_for_file: sort_child_properties_last
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,16 +23,22 @@ class _SliderpageState extends State<Sliderpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Slider'),
-         centerTitle: true,
+        title: Text(
+          'Image Slider',
+          style:
+              GoogleFonts.sevillana(fontSize: 30, fontWeight: FontWeight.w600),
+        ),
+        centerTitle: true,
       ),
-       
       body: Container(
-        decoration:const BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft, // Starting point of the gradient
             end: Alignment.bottomRight, // Ending point of the gradient
-            colors: [Color.fromARGB(255, 22, 4, 128), Color.fromARGB(232, 142, 140, 228)], // Colors of the gradient
+            colors: [
+              Color.fromARGB(255, 22, 4, 128),
+              Color.fromARGB(232, 142, 140, 228)
+            ], // Colors of the gradient
           ),
         ),
         child: Center(
@@ -65,13 +72,27 @@ class _SliderpageState extends State<Sliderpage> {
                               elevation: 5,
                               shadowColor: const Color.fromARGB(255, 2, 0, 0),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15), // Rounded corners
+                                borderRadius: BorderRadius.circular(
+                                    15), // Rounded corners
                               ),
                             ),
                           ),
                         ))
                     .toList(),
               ),
+              AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    'Hello worldhgjhgghgfhgdfhdgfhgdfhghgdfhgdf gfhdgfhdgfhdgf g gfhdgfhdgf!',textAlign: TextAlign.center,
+                    textStyle: GoogleFonts.sevillana(fontSize: 40,fontWeight: FontWeight.w500),
+                    speed: const Duration(milliseconds: 200),
+                  ),
+                ],
+                totalRepeatCount: 5,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+              )
             ],
           ),
         ),
