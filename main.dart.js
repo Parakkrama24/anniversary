@@ -38669,7 +38669,7 @@ A.Lh.prototype={
 T(a){var s=null,r=A.a9L("Image Slider",A.aaP().$2$fontSize$fontWeight(30,B.h_),s)
 return A.aeb(new A.qt(r,!0,new A.JX(s,s,1/0,56),s),new A.Cm(new A.a5r(this),s))}}
 A.a5r.prototype={
-$2(a,b){var s,r,q,p,o=null,n="Hello worldhgjhgghgfhgdfhdgfhgdfhghgdfhgdf gfhdgfhdgfhdgf g gfhdgfhdgf!",m=b.b>600,l=m?600:400,k=A.bW(0,800),j=this.a.d,i=A.W(j).h("ae<1,i1>")
+$2(a,b){var s,r,q,p,o=null,n="Love is composed of a single soul inhabiting two bodies",m=b.b>600,l=m?600:400,k=A.bW(0,800),j=this.a.d,i=A.W(j).h("ae<1,i1>")
 i=A.X(new A.ae(j,new A.a5q(b),i),!0,i.h("ay.E"))
 j=i.length
 s=$.a7
