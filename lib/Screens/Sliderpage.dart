@@ -26,7 +26,7 @@ class _SliderpageState extends State<Sliderpage> {
   @override
   void initState() {
     super.initState();
-    Playsound();
+    Playsound(); 
   }
 
   @override
