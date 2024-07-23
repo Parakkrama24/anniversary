@@ -1,8 +1,5 @@
-
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:audioplayers_web/audioplayers_web.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,9 +13,14 @@ class Sliderpage extends StatefulWidget {
 
 class _SliderpageState extends State<Sliderpage> {
   final List<String> imgList = [
-    'assets/01.jpeg',
+    'assets/01.jpg',
     'assets/02.jpg',
     'assets/03.jpg',
+    'assets/04.jpg',
+    'assets/05.jpg',
+    'assets/06.jpg',
+    'assets/07.jpg',
+    'assets/08.jpg',
   ];
 
   final player = AudioPlayer();
@@ -26,16 +28,24 @@ class _SliderpageState extends State<Sliderpage> {
   @override
   void initState() {
     super.initState();
-    Playsound(); 
+    Playsound();
+  }
+
+  @override
+  void dispose() {
+    player.stop(); // Stop the music when the widget is disposed
+    player.release(); // Release the resources used by the player
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 100, // Increase the AppBar height
         title: Text(
-          'Image Slider',
-          style: GoogleFonts.sevillana(fontSize: 30, fontWeight: FontWeight.w600),
+          'Happy anniversary my love',
+          style: GoogleFonts.sevillana(fontSize: 45, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
@@ -99,7 +109,7 @@ class _SliderpageState extends State<Sliderpage> {
                           TypewriterAnimatedText(
                             'Love is composed of a single soul inhabiting two bodies',
                             textAlign: TextAlign.center,
-                            textStyle: GoogleFonts.sevillana(fontSize: 40, fontWeight: FontWeight.w500),
+                            textStyle: GoogleFonts.sevillana(fontSize: 50, fontWeight: FontWeight.w800),
                             speed: const Duration(milliseconds: 200),
                           ),
                         ],
@@ -120,7 +130,7 @@ class _SliderpageState extends State<Sliderpage> {
   }
 
   Future<void> Playsound() async {
-    String audiopath = "audio/inna.m4a";
+    String audiopath = "audio/inna.mp3";
     await player.play(AssetSource(audiopath));
   }
 }

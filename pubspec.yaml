@@ -66,10 +66,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/audio/inna.m4a
+    - assets/audio/inna.mp3
     - assets/couple.jpg
-    - assets/01.jpeg
+    - assets/01.jpg
     - assets/02.jpg
     - assets/03.jpg
+    - assets/04.jpg
+    - assets/05.jpg
+    - assets/06.jpg
+    - assets/07.jpg
+    - assets/08.jpg
+    - assets/09.jpg
     - assets/an.webp
     
 
