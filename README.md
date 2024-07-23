@@ -1,2 +1,2 @@
 # anniversaryApp
- 4 th anivasory 
+ 4 th anniversary  
