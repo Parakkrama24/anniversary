@@ -1,4 +1,8 @@
+
+
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers_web/audioplayers_web.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +20,14 @@ class _SliderpageState extends State<Sliderpage> {
     'assets/02.jpg',
     'assets/03.jpg',
   ];
+
+  final player = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    Playsound();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +65,7 @@ class _SliderpageState extends State<Sliderpage> {
                         aspectRatio: 16 / 9,
                         autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: true,
-                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayAnimationDuration: const Duration(milliseconds: 800),
                         viewportFraction: 0.8,
                       ),
                       items: imgList
@@ -68,7 +80,7 @@ class _SliderpageState extends State<Sliderpage> {
                                         width: constraints.maxWidth > 600 ? 800 : 1000,
                                       ),
                                     ),
-                                    color: Color.fromARGB(255, 0, 1, 2),
+                                    color: const Color.fromARGB(255, 0, 1, 2),
                                     elevation: 5,
                                     shadowColor: const Color.fromARGB(255, 2, 0, 0),
                                     shape: RoundedRectangleBorder(
@@ -79,7 +91,7 @@ class _SliderpageState extends State<Sliderpage> {
                               ))
                           .toList(),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth > 600 ? 100 : 20),
                       child: AnimatedTextKit(
@@ -105,5 +117,10 @@ class _SliderpageState extends State<Sliderpage> {
         },
       ),
     );
+  }
+
+  Future<void> Playsound() async {
+    String audiopath = "audio/inna.m4a";
+    await player.play(AssetSource(audiopath));
   }
 }
