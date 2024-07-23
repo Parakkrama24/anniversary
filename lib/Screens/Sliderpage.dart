@@ -85,7 +85,7 @@ class _SliderpageState extends State<Sliderpage> {
                       child: AnimatedTextKit(
                         animatedTexts: [
                           TypewriterAnimatedText(
-                            'Hello worldhgjhgghgfhgdfhdgfhgdfhghgdfhgdf gfhdgfhdgfhdgf g gfhdgfhdgf!',
+                            'Love is composed of a single soul inhabiting two bodies',
                             textAlign: TextAlign.center,
                             textStyle: GoogleFonts.sevillana(fontSize: 40, fontWeight: FontWeight.w500),
                             speed: const Duration(milliseconds: 200),
